@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>booleans</title>
+  </head>
+  <body>
+    <p>rock paper and scissors</p>
+      <button onclick="
+      randomove();
+      playgame('rock');
+      ">rock</button>
+
+       <button onclick="
+       randomove();
+       playgame('paper');
+      ">paper</button>
+
+      <button onclick="
+      randomove();
+      playgame('scissor');
+      ">scissor</button>
+
+
+ <script> 
+     function playgame(choice){
+      const compmov = randomove();
+
+      if (choice === 'rock') {
+      let result = '';
+      if (compmov === 'rock'){
+        result = 'tie';
+      } else if (compmov === 'paper'){
+        result = 'you loose';
+      } else if (compmov === 'scissor'){
+        result = 'you win';
+      } 
+    } else if (choice === 'paper')
+          {
+            let result = '';
+
+            if (compmov === 'rock'){
+              result = 'win';
+            } else if (compmov === 'paper'){
+              result = 'tie';
+            } else if (compmov === 'scissor'){
+              result = 'loose';
+            }
+
+            } else if (choice === 'scissor')
+            {
+              let result = '';
+
+              if (compmov === 'rock'){
+                result = 'loose';
+              } else if (compmov === 'paper'){
+                result = 'win';
+              } else if (compmov === 'scissor'){
+                result = 'tie';
+              }
+
+            }
+
+
+            alert(`you choose ${choice} and the computer choose ${compmov} so the result is ${result}.`);}
+
+
+ function randomove(){
+      const randomnum = Math.random();
+      let compmov = '';
+      
+        if (randomnum >= 0 && randomnum<=1/3 ) 
+        {
+          compmov = 'rock';
+        }
+
+        else if (randomnum > 1/3 && randomnum < 2/3)
+        {
+          compmov = 'paper';
+        }
+
+        else if (randomnum > 2/3 && randomnum < 1)
+        {
+          compmov = 'scissor';
+        }
+        console.log(compmov);
+
+        return compmov;
+      }
+      
+    </script>
+    
+  </body>
+</html>
